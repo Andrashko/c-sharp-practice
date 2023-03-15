@@ -1,0 +1,8 @@
+D:\Visual Studio2022\Projects\Homework8\Task2\bin\Debug\Task2.exe.config
+D:\Visual Studio2022\Projects\Homework8\Task2\bin\Debug\Task2.exe
+D:\Visual Studio2022\Projects\Homework8\Task2\bin\Debug\Task2.pdb
+D:\Visual Studio2022\Projects\Homework8\Task2\obj\Debug\Task2.csproj.AssemblyReference.cache
+D:\Visual Studio2022\Projects\Homework8\Task2\obj\Debug\Task2.csproj.SuggestedBindingRedirects.cache
+D:\Visual Studio2022\Projects\Homework8\Task2\obj\Debug\Task2.csproj.CoreCompileInputs.cache
+D:\Visual Studio2022\Projects\Homework8\Task2\obj\Debug\Task2.exe
+D:\Visual Studio2022\Projects\Homework8\Task2\obj\Debug\Task2.pdb
