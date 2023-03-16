@@ -9,3 +9,14 @@ D:\Visual Studio2022\Projects\Homework8\Task\obj\Debug\Task.csproj.GenerateResou
 D:\Visual Studio2022\Projects\Homework8\Task\obj\Debug\Task.csproj.CoreCompileInputs.cache
 D:\Visual Studio2022\Projects\Homework8\Task\obj\Debug\Task.exe
 D:\Visual Studio2022\Projects\Homework8\Task\obj\Debug\Task.pdb
+C:\projects\cs\Homework8\Task\bin\Debug\Task.exe.config
+C:\projects\cs\Homework8\Task\bin\Debug\Task.exe
+C:\projects\cs\Homework8\Task\bin\Debug\Task.pdb
+C:\projects\cs\Homework8\Task\obj\Debug\Task.csproj.AssemblyReference.cache
+C:\projects\cs\Homework8\Task\obj\Debug\Task.csproj.SuggestedBindingRedirects.cache
+C:\projects\cs\Homework8\Task\obj\Debug\Task.Form1.resources
+C:\projects\cs\Homework8\Task\obj\Debug\Task.Properties.Resources.resources
+C:\projects\cs\Homework8\Task\obj\Debug\Task.csproj.GenerateResource.cache
+C:\projects\cs\Homework8\Task\obj\Debug\Task.csproj.CoreCompileInputs.cache
+C:\projects\cs\Homework8\Task\obj\Debug\Task.exe
+C:\projects\cs\Homework8\Task\obj\Debug\Task.pdb
