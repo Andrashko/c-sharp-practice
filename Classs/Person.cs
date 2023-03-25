@@ -44,6 +44,7 @@ namespace People
         {
             Console.WriteLine($"Hi, {_name}");
         }
+
         public Person(string name, int marksCount = 3)
         {
             _name = name;
@@ -73,6 +74,7 @@ namespace People
 
             Console.Write($"{_name} marks are: ");
             Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(Console.ForegroundColor);
             for (int i = 0; i < _marks.Length; i++)
             {
                 Console.Write(_marks[i].ToString() + " ");
