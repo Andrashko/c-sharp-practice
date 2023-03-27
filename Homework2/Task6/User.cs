@@ -34,18 +34,18 @@ namespace Task6
             set => age = value;
             get => age;
         }
-        public DateTime DateOfregister
+        public string DateOfregister
         {
-            get => dateOfregister;
+            get => dateOfregister.ToShortDateString();
         }
 
-        public User(string login, string name, string lastName, int age, DateTime dateOfregister)
+        public User(string login, string name, string lastName, int age)
         {
             Login = login;
             Name = name;
             LastName = lastName;
             Age = age;
-            this.dateOfregister = dateOfregister;
+            this.dateOfregister = DateTime.Now.Date;
         }
     }
 }
