@@ -10,15 +10,17 @@ namespace Task3
     {
         static void Main(string[] args)
         {
-            Employee employee = new Employee("Oleksandr", "Lutso");
-
-            employee.SetPosition("Manager");
+            Employee employee = new Employee("Oleksandr", "Lutso", "Manager");
+            employee.FirstName = "Alex";
+            employee.SetPosition("Accountant");
             employee.WorkedDay(25);
-            employee.CalculateSalary();
-            employee.TaxCalculate(50000);
+            double salary = employee.CalculateSalary();
+            employee.TaxCalculate();
             //помилка виклику методу 
-            Console.WriteLine($"\nІм'я: {employee.FirstName}\nПрізвище: {employee.LastName}\nПосада: \nОклад: \nПодатковий збір: {employee.TaxCalculate}");
-
+            Console.WriteLine($"\nІм'я: {employee.FirstName}\nПрізвище: {employee.LastName}\nПосада:{employee.Position} \nОклад:{employee.Salary} \nПодатковий збір: {employee.TaxCalculate()} \nВиплата {salary}");
+            employee.Position = "Secretary";
+            Console.WriteLine($"\nІм'я: {employee.FirstName}\nПрізвище: {employee.LastName}\nПосада:{employee.Position} \nОклад:{employee.Salary} \nПодатковий збір: {employee.TaxCalculate()} \nВиплата {employee.CalculateSalary()}");
+            employee.Position = "Teacher";
             Console.ReadKey();
         }
     }

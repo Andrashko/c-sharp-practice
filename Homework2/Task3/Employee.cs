@@ -14,13 +14,13 @@ namespace Task3
         private string lastName;
         private string position;
         private double workedDayOfMonth;
-        private int dayOfMonth;
+        private int dayOfMonth = 30;
         private double salary;
 
 
         public string FirstName
         {
-            set => FirstName = value;
+            set => firstName = value;
             get => firstName;
         }
         public string LastName
@@ -30,24 +30,43 @@ namespace Task3
         }
         public double Salary
         {
-            set => Salary = value;
             get => salary;
         }
 
         public string Position
         {
             get => this.position;
+            set  
+            {
+                switch (value)
+                {
+                    case "Manager":
+                        salary = 20000;
+                        break;
+                    case "Accountant":
+                        salary = 30000;
+                        break;
+
+                    case "Secretary":
+                        salary = 15000;
+                        break;
+                    default:
+                        throw new Exception("Вибачте, але такої посади не має :(");
+                }
+                this.position = value;
+            }
         }
 
-        public Employee(string FirstName, string LastName)
+        public Employee(string FirstName, string LastName, string Position)
         {
             firstName = FirstName;
             lastName = LastName;
+            this.Position = Position;
         }
 
         public void SetPosition(string Position)
         {
-            this.position = Position;
+            this.Position = Position;
         }
 
         public void WorkedDay(int WorkedDayOfMonth)
@@ -55,33 +74,17 @@ namespace Task3
             this.workedDayOfMonth = WorkedDayOfMonth;
         }
 
-
-        public double TaxCalculate(double salary)
+        // не взаємодіє з   public double Salary
+        public double TaxCalculate()
 
         {
             return salary * 0.2;
         }
 
-        public void CalculateSalary()
+        public double CalculateSalary()
         {
             
-            switch (position)
-            {
-                case "Manager":
-                    salary = (double)salary / dayOfMonth * workedDayOfMonth;
-                    break;
-
-                case "Accountant":
-                    salary = (double)salary / dayOfMonth * workedDayOfMonth;
-                    break;
-
-                case "Secretary":
-                    salary = (double)salary / dayOfMonth * workedDayOfMonth;
-                    break;
-                default:
-                    Console.WriteLine("Вибачте, але такої посади не має :(");
-                    break;
-            }
+            return Salary / dayOfMonth * workedDayOfMonth;
             
         }
                
