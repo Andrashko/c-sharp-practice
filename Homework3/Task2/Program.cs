@@ -28,16 +28,16 @@ namespace Task2
             switch (input)
             {
                 case "1":
-                    classRoom = new ClassRoom(pupil1);
+                    classRoom = new ClassRoom(pupil1, pupil1);
                     break;
                 case "2":
-                    classRoom = new ClassRoom(pupil2);
+                    classRoom = new ClassRoom(pupil2, pupil2);
                     break;
                 case "3":
-                    classRoom = new ClassRoom(pupil3);
+                    classRoom = new ClassRoom(pupil3, pupil3);
                     break;
                 case "4":
-                    classRoom = new ClassRoom(pupil4);
+                    classRoom = new ClassRoom(pupil4, pupil4);
                     break;
                 
                 default:

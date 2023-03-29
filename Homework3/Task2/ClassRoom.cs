@@ -63,9 +63,6 @@ namespace Task2
             pupil4.Relax();
         }
 
-        public ClassSwitch
-            {
-}
     }
 
   
