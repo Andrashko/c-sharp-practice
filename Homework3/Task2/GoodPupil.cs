@@ -10,7 +10,7 @@ namespace Task2
     {
         public override void Study()
         {
-            Console.WriteLine("Учень навчається добре");
+           Console.WriteLine("Учень навчається добре");
         }
 
         public override void Read()

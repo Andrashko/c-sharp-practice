@@ -6,27 +6,15 @@ using System.Threading.Tasks;
 
 namespace Task2
 {
-    internal class Pupil
-    { 
-        public virtual void Study()
-        {
-            Console.WriteLine("навчається");
-        }
+    internal abstract class Pupil
+    {
+        public abstract void Study();
 
-        public virtual void Read()
-        {
-            Console.WriteLine("читає");
-        }
+        public abstract void Read();
 
-        public virtual void Write()
-        {
-            Console.WriteLine("пише");
-        }
+        public abstract void Write();
 
-        public virtual void Relax()
-        {
-            Console.WriteLine("вiдпочиває");
-        }
+        public abstract void Relax();
 
     }
 

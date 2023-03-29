@@ -14,8 +14,8 @@ namespace Task2
             ClassRoom classRoom1 = new ClassRoom(
                     new ExcelentPupil(),
                     new GoodPupil(),
-                    new BadPupil(),
-                    new Pupil()
+                    new BadPupil()
+ //                   new Pupil()
                 );
             classRoom1.Study();
             classRoom1.Read();
@@ -23,8 +23,8 @@ namespace Task2
             classRoom1.Relax();
             Console.WriteLine("Клас з 2 відмінниками");
             ClassRoom classRoom2 = new ClassRoom(
-                new ExcelentPupil(),
-                new ExcelentPupil()
+                    new ExcelentPupil(),
+                    new ExcelentPupil()
                 );
             classRoom2.Study();
             classRoom2.Read();
