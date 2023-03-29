@@ -10,48 +10,29 @@ namespace Task2
     {
         static void Main(string[] args)
         {
-            Pupil pupil1 = new ExcelentPupil();
-            Pupil pupil2 = new GoodPupil();
-            Pupil pupil3 = new BadPupil();
-            Pupil pupil4 = new BadPupil();
+            Console.WriteLine("Клас з 4 різними учнями");
+            ClassRoom classRoom1 = new ClassRoom(
+                    new ExcelentPupil(),
+                    new GoodPupil(),
+                    new BadPupil(),
+                    new Pupil()
+                );
+            classRoom1.Study();
+            classRoom1.Read();
+            classRoom1.Write();
+            classRoom1.Relax();
+            Console.WriteLine("Клас з 2 відмінниками");
+            ClassRoom classRoom2 = new ClassRoom(
+                new ExcelentPupil(),
+                new ExcelentPupil()
+                );
+            classRoom2.Study();
+            classRoom2.Read();
+            classRoom2.Write();
+            classRoom2.Relax();
 
-            Console.WriteLine("Оберіть учня:");
-            Console.WriteLine("1. Джон");
-            Console.WriteLine("2. Марія");
-            Console.WriteLine("3. Пітер");
-            Console.WriteLine("4. Ліза");
-            
 
-            string input = Console.ReadLine();
 
-            ClassRoom classRoom = null;
-            switch (input)
-            {
-                case "1":
-                    classRoom = new ClassRoom(pupil1, pupil1);
-                    break;
-                case "2":
-                    classRoom = new ClassRoom(pupil2, pupil2);
-                    break;
-                case "3":
-                    classRoom = new ClassRoom(pupil3, pupil3);
-                    break;
-                case "4":
-                    classRoom = new ClassRoom(pupil4, pupil4);
-                    break;
-                
-                default:
-                    Console.WriteLine("Не вiрний ввiд");
-                    return;
-            }
-
-            if (classRoom != null)
-            {
-                classRoom.Study();
-                classRoom.Read();
-                classRoom.Write();
-                classRoom.Relax();
-            }
 
             Console.ReadKey();
         }

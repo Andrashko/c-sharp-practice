@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace Task2
 {
     internal class Pupil
-    {
-        
+    { 
         public virtual void Study()
         {
             Console.WriteLine("навчається");

@@ -8,6 +8,7 @@ namespace Task2
 {
     internal class BadPupil : Pupil
     {
+
         public override void Study()
         {
             Console.WriteLine("Учень навчається задовiльно");

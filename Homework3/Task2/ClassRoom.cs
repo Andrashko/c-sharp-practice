@@ -8,59 +8,66 @@ namespace Task2
 {
     internal class ClassRoom
     {
-        private Pupil pupil1;
-        private Pupil pupil2;
-        private Pupil pupil3;
-        private Pupil pupil4;
-
+        private Pupil[] pupils;
+        private const int COUNT = 4;      
+     
         public ClassRoom(Pupil pupil1, Pupil pupil2, Pupil pupil3, Pupil pupil4)
+            : this(pupil1, pupil2, pupil3)
         {
-            this.pupil1 = pupil1;
-            this.pupil2 = pupil2;
-            this.pupil3 = pupil3;
-            this.pupil4 = pupil4;
+            pupils[3] = pupil4;
         }
 
         public ClassRoom(Pupil pupil1, Pupil pupil2, Pupil pupil3)
-            : this(pupil1, pupil2, pupil3, new BadPupil())
+            : this(pupil1, pupil2)
         {
+            pupils[2] = pupil3;
         }
 
         public ClassRoom(Pupil pupil1, Pupil pupil2)
-            : this(pupil1, pupil2, new BadPupil(), new BadPupil())
         {
+            pupils = new Pupil[COUNT];  
+            pupils[0] = pupil1;
+            pupils[1] = pupil2;
         }
 
         public void Study()
         {
-            pupil1.Study();
-            pupil2.Study();
-            pupil3.Study();
-            pupil4.Study();
+            for (int i = 0;i<COUNT; i++)
+            {
+                if (pupils[i] == null)
+                    break;
+                pupils[i].Study();
+            }
         }
 
         public void Read()
         {
-            pupil1.Read();
-            pupil2.Read();
-            pupil3.Read();
-            pupil4.Read();
+            for (int i = 0; i < COUNT; i++)
+            {
+                if (pupils[i] == null)
+                    break;
+                pupils[i].Read();
+            }
         }
 
         public void Write()
         {
-            pupil1.Write();
-            pupil2.Write();
-            pupil3.Write();
-            pupil4.Write();
+            for (int i = 0; i < COUNT; i++)
+            {
+                if (pupils[i] == null)
+                    break;
+                pupils[i].Write();
+            }
         }
 
         public void Relax()
         {
-            pupil1.Relax();
-            pupil2.Relax();
-            pupil3.Relax();
-            pupil4.Relax();
+            for (int i = 0; i < COUNT; i++)
+            {
+                if (pupils[i] == null)
+                    break;
+                pupils[i].Relax();
+            }
         }
 
     }
