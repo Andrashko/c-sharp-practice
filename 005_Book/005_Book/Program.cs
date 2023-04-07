@@ -4,6 +4,7 @@ using System.Text;
 using Managers;
 
 
+
 namespace _005_Book
 {
     
@@ -29,7 +30,8 @@ namespace _005_Book
                 new string[] {"Last string"}
             });
 
-           /* FindAndReplaceManager.FindNext("Second row", book);
+           /* 
+            FindAndReplaceManager.FindNext("Second row", book);
             FindAndReplaceManager.FindNext("Taras", kobzar);
            */
             kobzar.notes.Add("Love Ukraine");

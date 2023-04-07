@@ -11,7 +11,6 @@ namespace Managers
     {
         public static void FindNext(string str, Book book)
         {
-
             for (int page = 0; page < book.Pages.Length; page++)
             {
                 for (int row = 0; row < book.Pages[page].Length; row++)
