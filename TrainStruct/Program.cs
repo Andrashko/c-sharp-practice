@@ -67,7 +67,6 @@ namespace TrainStruct
                      Distanition = distanation,
                      Time = time
                  };*/
-                trains[i] = new Train();
                 trains[i].NumberOfTrain = numberOfTrain;
                 trains[i].Time = time;
                 trains[i].Distanition = distanation;
