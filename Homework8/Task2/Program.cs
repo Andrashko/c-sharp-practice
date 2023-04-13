@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Task2
 {
@@ -10,37 +11,26 @@ namespace Task2
     {
         static void Main(string[] args)
         {
-            monthPay(100);
-        }
-        static void monthPay(int sumPayment)
-        {
-            Console.WriteLine("Введiть суму платежу: ");
-            int sumPay = int.Parse(Console.ReadLine());
-            int totalSumDebt = 700;
-            int maxCountPay = 7;
+            Console.Write("Введiть текст: ");
+            string text = Console.ReadLine();
 
-            if (sumPay == 0)
+            Console.WriteLine();
+            Console.WriteLine(new string('*',20));
+            Console.WriteLine();
+
+            Console.Write("Оберiть зi списку колiр та введiть вiдповiдний номер:\n1.Синiй\n2.Бiлий\n3.Чорний\n4.Червоний\n5.Зелений\n6.Жовтий\n7.Смарагдовий\n\nНОМЕР:  ");
+            int selectedColor = int.Parse(Console.ReadLine());
+
+            if (selectedColor < 1 || selectedColor > 7)
             {
+                Console.WriteLine("Вибачте, такого кольору немає :( ");
                 return;
             }
 
-            totalSumDebt -= sumPay;
-            maxCountPay--;
-
-            if (totalSumDebt == 0)
-            {
-                maxCountPay = 0;
-                Console.WriteLine("Сума погашена");
-                return;
-            }
-
-            else if (totalSumDebt > 0)
-            {
-                Console.WriteLine($"Сума довгу {totalSumDebt}, залишилось {maxCountPay} платежiв");
-            }
+            ColorfulLife.UsersColor color = (ColorfulLife.UsersColor)(selectedColor - 1);
+            ColorfulLife.Print(text, color);
 
             Console.ReadKey();
-
         }
     }
 }
