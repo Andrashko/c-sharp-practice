@@ -8,26 +8,26 @@ namespace Task3
 {
     internal class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
+            Accountant accountant = new Accountant();
+            Console.WriteLine("Лiкар: ");
+            accountant.BonusPlus(Accountant.Post.Doctor, 103);
 
-            Console.WriteLine("Введiть кiлькiсть клiєнтiв: ");
-            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+            Console.WriteLine("Програмiст: ");
+            accountant.BonusPlus(Accountant.Post.Programmer, 311);
 
+            Console.WriteLine();
+            Console.WriteLine("Вчитель: ");
+            accountant.BonusPlus(Accountant.Post.Teacher, 112);
 
-            int result = deliveryRoutes(n);
-            Console.WriteLine("Кiлькiсть маршрутiв: " + result);
+            Console.WriteLine();
+            Console.WriteLine("Дизайнер: ");
+            accountant.BonusPlus(Accountant.Post.Designer, 431);
+
             Console.ReadKey();
-
         }
-
-        static int deliveryRoutes(int n)
-        {
-            if (n == 0)
-                return 1;
-            else
-                return n * deliveryRoutes(n - 1);
-
-        }
+        
     }
 }

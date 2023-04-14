@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{33FF4CBC-8E68-41C5-A3F8-85F74BB52590}</ProjectGuid>
+    <ProjectGuid>{84C6ABD6-EDFA-48DB-B774-0BFA2CBFC95C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Task3</RootNamespace>
     <AssemblyName>Task3</AssemblyName>
@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accountant.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
