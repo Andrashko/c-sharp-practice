@@ -35,6 +35,7 @@ namespace Template
         {
             get { return Creatures.Humen; }
         }
+
     }
 
     public class Monkey : CreatureType
@@ -44,7 +45,7 @@ namespace Template
             get { return Creatures.Monkey; }
         }
     }
-    class MagicBag <T> where T : CreatureType
+    class MagicBag 
     {
         private List<Creatures> hasOpened = new List<Creatures>();
        /*
@@ -70,7 +71,7 @@ namespace Template
         }
        */
 
-        public string Open(T creature)
+        public string Open<T>(T creature) where T : CreatureType
         {
             if (hasOpened.Contains(creature.Type))
                 return $"{creature.Type} вже сьогодні відкривала";
@@ -81,6 +82,8 @@ namespace Template
                 return "Гроші";
             return "Невідомий тип істоти";
         }
+
+
     }
     internal class Program
     {
@@ -98,12 +101,12 @@ namespace Template
             Console.WriteLine(magicBag.Open());
             */
 
-            MagicBag<CreatureType> magicBag1 = new MagicBag<CreatureType>();
+            MagicBag magicBag1 = new MagicBag();
             Console.WriteLine(magicBag1.Open(new Monkey()));
             Console.WriteLine(magicBag1.Open(new Monkey()));
             Console.WriteLine(magicBag1.Open(new Humen()));
             Console.WriteLine(magicBag1.Open(new Humen()));
-            MagicBag<CreatureType> magicBag2 = new MagicBag<CreatureType>();
+            MagicBag magicBag2 = new MagicBag();
             Console.WriteLine(magicBag2.Open(new Monkey()));
             Console.WriteLine(magicBag2.Open(new Monkey()));
             Console.WriteLine(magicBag2.Open(new Humen()));
