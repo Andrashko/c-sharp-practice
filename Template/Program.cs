@@ -21,21 +21,24 @@ namespace Template
      */
     public enum Creatures
     {
-        Humen,
+        Human,
         Monkey
     }
     interface CreatureType
     {
         Creatures Type { get; }
+        string TypeToUkrainian { get; }
     }
 
-    public class Humen: CreatureType
+    public class Human: CreatureType
     {
         public Creatures Type
         {
-            get { return Creatures.Humen; }
+            get { return Creatures.Human; }
         }
-
+        public string TypeToUkrainian { 
+            get { return "Людина"; }
+        }
     }
 
     public class Monkey : CreatureType
@@ -43,6 +46,10 @@ namespace Template
         public Creatures Type
         {
             get { return Creatures.Monkey; }
+        }
+        public string TypeToUkrainian
+        {
+            get { return "Мавпа"; }
         }
     }
     class MagicBag 
@@ -71,14 +78,14 @@ namespace Template
         }
        */
 
-        public string Open<T>(T creature) where T : CreatureType
+        public string Open<T> (T creature) where T : CreatureType
         {
             if (hasOpened.Contains(creature.Type))
-                return $"{creature.Type} вже сьогодні відкривала";
+                return $"{creature.TypeToUkrainian} вже сьогодні відкривала";
             hasOpened.Add(creature.Type);
             if (creature.Type == Creatures.Monkey)
                 return "Банан";
-            if (creature.Type == Creatures.Humen)
+            if (creature.Type == Creatures.Human)
                 return "Гроші";
             return "Невідомий тип істоти";
         }
@@ -104,13 +111,13 @@ namespace Template
             MagicBag magicBag1 = new MagicBag();
             Console.WriteLine(magicBag1.Open(new Monkey()));
             Console.WriteLine(magicBag1.Open(new Monkey()));
-            Console.WriteLine(magicBag1.Open(new Humen()));
-            Console.WriteLine(magicBag1.Open(new Humen()));
+            Console.WriteLine(magicBag1.Open(new Human()));
+            Console.WriteLine(magicBag1.Open(new Human()));
             MagicBag magicBag2 = new MagicBag();
             Console.WriteLine(magicBag2.Open(new Monkey()));
             Console.WriteLine(magicBag2.Open(new Monkey()));
-            Console.WriteLine(magicBag2.Open(new Humen()));
-            Console.WriteLine(magicBag2.Open(new Humen()));
+            Console.WriteLine(magicBag2.Open(new Human()));
+            Console.WriteLine(magicBag2.Open(new Human()));
             Console.ReadLine();
         }
     }
