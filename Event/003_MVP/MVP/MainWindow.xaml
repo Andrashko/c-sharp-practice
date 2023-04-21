@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="204" Width="525">
     <Grid>
-        <Button Content="+" Height="23" HorizontalAlignment="Left" Margin="61,116,0,0" Name="buttonAdd" VerticalAlignment="Top" Width="120" Click="buttonAdd_Click" />
+        <Button Content="Start" Height="23" HorizontalAlignment="Left" Margin="61,116,0,0" Name="buttonStart" VerticalAlignment="Top" Width="120" Click="buttonStart_Click" />
 
         <TextBox Height="23" HorizontalAlignment="Left" Margin="76,47,0,0" Name="textBox1" VerticalAlignment="Top" Width="338" />
-        <Button Content="Stop" Height="23" HorizontalAlignment="Center" Margin="0,116,0,0" x:Name="button1_Copy" VerticalAlignment="Top" Width="120" Click="button1_Click" />
-        <Button Content="Reset" Height="23" HorizontalAlignment="Left" Margin="351,116,0,0" x:Name="button1_Copy1" VerticalAlignment="Top" Width="120" Click="button1_Click" />
+        <Button Content="Stop" Height="23" HorizontalAlignment="Center" Margin="0,116,0,0" x:Name="button1_Copy" VerticalAlignment="Top" Width="120"  Click="buttonStop_Click"/>
+        <Button Content="Reset" Height="23" HorizontalAlignment="Left" Margin="351,116,0,0" x:Name="button1_Copy1" VerticalAlignment="Top" Width="120"  />
     </Grid>
 </Window>

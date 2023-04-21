@@ -7,6 +7,7 @@ namespace MVP
         private double _value = 0;
 
         public double Value { get { return _value; } }
+        //дія, змінює стан моделі
         public void Add(double number1, double number2)
         {
             _value = number1 + number2;
