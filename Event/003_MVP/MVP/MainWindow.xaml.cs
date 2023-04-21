@@ -8,7 +8,8 @@ namespace MVP
     public enum TimerAction
     {
         Start,
-        Stop
+        Stop,
+        Reset
     }
     public class ActionEventArgs: EventArgs
     {
@@ -38,6 +39,11 @@ namespace MVP
         private void buttonStop_Click(object sender, RoutedEventArgs e)
         {
             ButtonClicked.Invoke(this, new ActionEventArgs(TimerAction.Stop));
+        }
+
+        private void buttonReset_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonClicked.Invoke(this, new ActionEventArgs(TimerAction.Reset));
         }
     }
 }

@@ -24,10 +24,16 @@ namespace MVP
         {
             switch (e.Action) {
                 case TimerAction.Start:
+                    UpdateValue();
                     dispatcherTimer.Start();
                     break;
                 case TimerAction.Stop:
                     dispatcherTimer.Stop();
+                    break;
+                case TimerAction.Reset:
+                    model.Reset();
+                    dispatcherTimer.Stop();
+                    UpdateValue();
                     break;
             }
         }
@@ -35,9 +41,13 @@ namespace MVP
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
             model.Inc();
-            this.view.textBox1.Text = model.Value.ToString();
+            UpdateValue();
         }
 
+        private void UpdateValue()
+        {
+            this.view.textBox1.Text = model.Value.ToString();
+        }
 
     }
 }
