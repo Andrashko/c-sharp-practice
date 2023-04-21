@@ -7,10 +7,9 @@ namespace MVP
         private double _value = 0;
 
         public double Value { get { return _value; } }
-        public double Add(double value)
+        public void Add(double number1, double number2)
         {
-            _value += value;
-            return _value;
+            _value = number1 + number2;
         }
 
         public double Sub(double value)

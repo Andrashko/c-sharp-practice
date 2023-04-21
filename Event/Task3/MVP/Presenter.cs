@@ -21,8 +21,10 @@ namespace MVP
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            var data = model.Add(view.FirstNumber + view.SecondNumber);
-            this.view.resultButton.Text = data.ToString();
+            //виклик методу моделі
+            model.Add(view.FirstNumber, view.SecondNumber);
+            //отримання значення із моделі
+            this.view.resultButton.Text = model.Value.ToString();
         }
 
         private void subButton_Click(object sender, EventArgs e)
