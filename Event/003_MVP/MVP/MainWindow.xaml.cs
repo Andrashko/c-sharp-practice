@@ -5,6 +5,21 @@ using System.Windows;
 
 namespace MVP
 {
+    public enum TimerAction
+    {
+        Start,
+        Stop
+    }
+    public class ActionEventArgs: EventArgs
+    {
+        private TimerAction _action;
+
+        public TimerAction Action { get { return _action; } }
+        public ActionEventArgs(TimerAction action)
+        {
+            this._action = action;
+        }
+    }
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -13,16 +28,16 @@ namespace MVP
             new Presenter(this);
         }
 
-        public event EventHandler myEvent = null;
-        public event EventHandler addEvent = null;
-        private void button1_Click(object sender, RoutedEventArgs e)
+
+        public event EventHandler<ActionEventArgs> ButtonClicked;
+        private void buttonStart_Click(object sender, RoutedEventArgs e)
         {
-            myEvent.Invoke(sender, e);
+            ButtonClicked.Invoke(this, new ActionEventArgs(TimerAction.Start));
         }
 
-        private void buttonAdd_Click(object sender, RoutedEventArgs e)
+        private void buttonStop_Click(object sender, RoutedEventArgs e)
         {
-            addEvent.Invoke(sender, e);
+            ButtonClicked.Invoke(this, new ActionEventArgs(TimerAction.Stop));
         }
     }
 }
