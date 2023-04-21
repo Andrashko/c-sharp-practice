@@ -10,5 +10,7 @@ namespace MVP
 
         public void Inc() { _value++; }
 
+        public void Reset() { _value = 0; }
+
     }
 }
