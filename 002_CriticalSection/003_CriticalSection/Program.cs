@@ -25,7 +25,7 @@ namespace CriticalSection
 
         static void Main()
         {
-            Console.SetWindowSize(80, 45);
+            Console.SetWindowSize(40, 20);
 
             ThreadStart writeSecond = new ThreadStart(WriteSecond);
             Thread thread = new Thread(writeSecond);
