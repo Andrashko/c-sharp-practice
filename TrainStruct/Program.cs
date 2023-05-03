@@ -1,102 +1,98 @@
 ﻿using System;
+using static System.Net.Mime.MediaTypeNames;
 
-namespace DateOperator
+namespace TrainStruct
+
 {
-    class Person
+    /*    
+     *    Використовуючи Visual Studio, створіть проект за шаблоном 
+     *    Console Application.
+     *    Потрібно: Описати структуру з ім'ям Train, 
+     *    що містить такі поля: назву пункту призначення, номер поїзда, 
+     *    час відправлення. */
+    struct Train
     {
-        public string Name { get; set; }
-        public MyDate Birthday { get; set; }
+        public string Distanition;
+        public int NumberOfTrain;
+        public DateTime Time;
     }
     /*
-     * Створіть клас, який буде містити інформацію про дату 
-     * (день, місяць, рік).
-     * За допомогою механізму перевантаження 
-     * операторів, визначте операцію різниці двох дат 
-     * (результат у вигляді кількості днів між датами), 
-     * а також операцію збільшення дати на певну кількість днів.
+     *    Написати програму,  яка виконує такі дії: 
+     *    введення з клавіатури даних до масиву,
+     *    що складається з восьми елементів типу Train 
+     *    (записи мають бути впорядковані за номерами поїздів); 
+     *    виведення на екран інформації про поїзд, 
+     *    номер якого введено з клавіатури
+     *    (якщо таких поїздів немає, вивести відповідне повідомлення).
      */
 
-    public class MyDate
-    {
-        private int _day;
-        public int Day
-        {
-            get { return _day; }
-            set
-            {
-                if (value <= 0 || value > 31)
-                {
-                    throw new Exception("Wrong day");
-                }
-                _day = value;
-            }
-        }
 
-        public int Month { get; set; }
-        public int Year { get; set; }
-
-        public MyDate(int year, int month, int day)
-        {
-            Year = year;
-            Month = month;
-            Day = day;
-        }
-
-        public static int operator - (MyDate fromDate, MyDate toDate)
-        {
-            return fromDate.ToDays() - toDate.ToDays();
-        } 
-
-        private int ToDays()
-        {
-            int result = Day;
-            result += Month * 30; //
-            result += Year * 365; //
-            return result;
-        }
-
-        private MyDate Clone()
-        {
-            return new MyDate(Year, Month, Day);
-        }
-
-        public static MyDate operator + (MyDate date, int  days)
-        {
-            /*MyDate result = date.MemberwiseClone() as MyDate;
-            //var result = date.Clone();
-            result.Day += days;
-            return result;*/
-
-            int day = date.Day + days;
-            int month = date.Month;
-            int year = date.Year;
-            if (day > 30) //
-            {
-                month += 1;
-                day -= 30;
-            }
-            if (month > 12) //
-            {
-                year += 1;
-                month -= 12;
-            }
-            return new MyDate(year, month, day);    
-        }
-        public override string ToString()
-        {
-            return $"{Day}.{Month}.{Year}";
-        }
-    }
     internal class Program
     {
+        static void Find(Train[] trains, int number)
+        {
+
+            for (int i = 0; i < trains.Length; i++)
+            {
+                if (trains[i].NumberOfTrain == number)
+                {
+                    Console.WriteLine($"{trains[i].NumberOfTrain} | {trains[i].Distanition}");
+                    return;
+                }
+            }
+            Console.WriteLine($"Не знайдено потяг з номером {number}");
+        }
+        static void Print(Train[] trains)
+        {
+            for (int i = 0; i < trains.Length; i++)
+            {
+                Console.WriteLine($"{trains[i].NumberOfTrain} | {trains[i].Distanition}");
+            }
+        }
+        static Train[] Input()
+        {
+            int count = 3;
+            Train[] trains = new Train[count];
+            for (int i = 0; i < count; i++)
+            {
+                Console.WriteLine("Введіть номер потяга:");
+                int numberOfTrain = int.Parse(Console.ReadLine());
+                Console.WriteLine("Введіть пункт призначення потяга:");
+                string distanation = Console.ReadLine();
+                Console.WriteLine("Введіть час відправлення потяга:");
+                DateTime time = Convert.ToDateTime(Console.ReadLine());
+                /* trains[i] = new Train()
+                 {
+                     NumberOfTrain = numberOfTrain,
+                     Distanition = distanation,
+                     Time = time
+                 };*/
+                trains[i].NumberOfTrain = numberOfTrain;
+                trains[i].Time = time;
+                trains[i].Distanition = distanation;
+            }
+            return trains;
+        }
         static void Main(string[] args)
         {
-            MyDate date = new MyDate(2023, 12, 29);
-            MyDate startDate = new MyDate(2023, 2, 24);
-            Console.WriteLine(date - startDate);
-            Console.WriteLine(date + 30);
-            Console.WriteLine(date);    
+            Train[] trains = Input();
 
+            Array.Sort(trains,
+            (Train t1, Train t2) =>
+            {
+                return t1.NumberOfTrain - t2.NumberOfTrain;
+                /*
+                if (t1.NumberOfTrain == t2.NumberOfTrain)
+                    return 0;
+                if (t1.NumberOfTrain > t2.NumberOfTrain)
+                    return 1;
+                return -1;*/
+            });
+
+            Print(trains);
+
+            Find(trains, 1);
+            Find(trains, -1);
             Console.ReadLine();
         }
     }
