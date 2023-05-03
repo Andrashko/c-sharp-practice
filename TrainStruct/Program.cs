@@ -6,6 +6,7 @@ namespace DateOperator
     {
         public string Name { get; set; }
         public MyDate Birthday { get; set; }
+    }
     /*
      * Створіть клас, який буде містити інформацію про дату 
      * (день, місяць, рік).
